@@ -13,7 +13,7 @@ WriteMakefile
         'ABSTRACT'  => 'Check International Standard Book Numbers',
         'VERSION'   => '0.5_04',
  		'PREREQ_PM' => {
- 			Test::Pod             => 0.71,
+ 			Test::Pod             => 0.70,
  			Test::More            => 0,
  			Test::Builder::Tester => 0,
  			File::Find::Rule      => 0,
