@@ -17,7 +17,7 @@ WriteMakefile
  			Test::More            => 0,
  			Test::Builder::Tester => 0,
  			File::Find::Rule      => 0,
- 			Business::ISBN        => 1.70,
+ 			Business::ISBN        => 0,
  			},
         'PM'        => 
         	{

@@ -1,4 +1,7 @@
 # $Id$
 
+0.5_05 - Mon Sep  9 13:18:46 CDT 2002
+	+ added Business::ISBN prereq
+	
 0.5_04 - Mon Sep  9 11:13:29 CDT 2002
     + got rid of Test::Manifest
