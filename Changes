@@ -1,5 +1,11 @@
 # $Id$
 
+1.05 - Wed Sep  8 04:11:04 2004
+* cleaned up the distro
+* bumped to a major version number
+* no code changes, so no need to upgrade unless you want the new
+version number
+
 0.5_05 - Mon Sep  9 13:18:46 CDT 2002
 	+ added Business::ISBN prereq
 	
