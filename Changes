@@ -1,5 +1,8 @@
 # $Id$
 
+1.06 - Tue Mar  8 18:09:43 2005
+	* Added POD Coverage tests: no need to upgrade
+
 1.05 - Wed Sep  8 04:11:04 2004
 * cleaned up the distro
 * bumped to a major version number
