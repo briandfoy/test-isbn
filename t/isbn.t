@@ -19,7 +19,7 @@ BEGIN
 	156592
 	);
 	}
-use Test::Builder::Tester tests => @good_isbns + @bad_isbns;
+use Test::Builder::Tester tests => 14;
 use Test::ISBN;
 
 foreach my $isbn ( @good_isbns )
@@ -35,6 +35,25 @@ foreach my $isbn ( @bad_isbns )
 	isbn_ok( $isbn );
 	test_diag( "    Failed test ($0 at line " . line_num(-1) . ")",
 		"The string [$isbn] is not a valid ISBN" );
-	test_test("isbn_ok");
+	test_test("isbn_ok catching errors");
 	}
 
+test_out( 'ok 1', 'ok 2' );
+isbn_country_ok( "1565927168", "1" );
+isbn_publisher_ok( "1565927168", "56592" );
+test_test("isbn_country_ok, isbn_publisher_ok");
+
+test_out( 'not ok 1' );
+isbn_country_ok( "1565927168", "0" );
+test_diag( "    Failed test ($0 at line " . line_num(-1) . ")",
+	"ISBN [1565927168] country code is wrong",
+	"\tExpected [0]", "\tGot [1]" );
+test_test("isbn_country_ok");
+
+
+test_out( 'not ok 1' );
+isbn_publisher_ok( "1565927168", "5659" );
+test_diag( "    Failed test ($0 at line " . line_num(-1) . ")",
+	"ISBN [1565927168] publisher code is wrong",
+	"\tExpected [5659]", "\tGot [56592]" );
+test_test("isbn_publisher_ok");
