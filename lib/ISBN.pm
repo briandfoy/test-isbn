@@ -11,7 +11,7 @@ use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-@EXPORT = qw(isbn_ok);
+@EXPORT = qw(isbn_ok isbn_country_ok isbn_publisher_ok);
 
 =head1 NAME
 
@@ -61,7 +61,7 @@ sub isbn_country_ok
 	{
 	my $isbn    = shift;
 	my $country = shift;
-	my $object  = Business::ISBN->new($_);
+	my $object  = Business::ISBN->new($isbn);
 	
 	unless( $object->is_valid )
 		{
@@ -75,9 +75,9 @@ sub isbn_country_ok
 	else
 		{
 		$Test->ok(0);
-		$Test->diag("ISBN [$isbn] country code is wrong",
-			"Expected [$country]",
-			"Got [" . $object->country_code . "]" );
+		$Test->diag("ISBN [$isbn] country code is wrong\n",
+			"\tExpected [$country]\n",
+			"\tGot [" . $object->country_code . "]\n" );
 		}
 		
 	}
@@ -93,7 +93,7 @@ sub isbn_publisher_ok
 	{
 	my $isbn      = shift;
 	my $publisher = shift;
-	my $object    = Business::ISBN->new($_);
+	my $object    = Business::ISBN->new($isbn);
 	
 	unless( $object->is_valid )
 		{
@@ -107,9 +107,9 @@ sub isbn_publisher_ok
 	else
 		{
 		$Test->ok(0);
-		$Test->diag("ISBN [$isbn] publisher code is wrong",
-			"Expected [$publisher]",
-			"Got [" . $object->publisher_code . "]" );
+		$Test->diag("ISBN [$isbn] publisher code is wrong\n",
+			"\tExpected [$publisher]\n",
+			"\tGot [" . $object->publisher_code . "]\n" );
 		}
 	}
 	
