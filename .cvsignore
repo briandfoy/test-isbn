@@ -1,1 +1,10 @@
 *gz
+Makefile
+blib
+pm_to_blib
+Test-*
+.lwpcookies
+*.old
+*.bak
+Makefile
+META.yml

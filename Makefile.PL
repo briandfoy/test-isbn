@@ -1,30 +1,34 @@
 # $Id$
 use ExtUtils::MakeMaker;
 
-my $tests = do {
-	local @ARGV = qw(t/test_manifest);
-	my $data = join " ", map {chomp; "t/$_" } <>;
-	};
-	
+eval "use Test::Manifest";
+
+unless( $@ )
+	{
+	sub ExtUtils::MM_Any::test_via_harness
+		{
+		my($self, $perl, $tests) = @_;
+
+		return qq|\t$perl "-MTest::Manifest" | .
+			qq|"-e" "run_t_manifest(\$(TEST_VERBOSE), '\$(INST_LIB)', | .
+			qq|'\$(INST_ARCHLIB)')"\n|;
+		}
+	}
 
 WriteMakefile
-        (
-        'NAME'      => 'Test::ISBN',
-        'ABSTRACT'  => 'Check International Standard Book Numbers',
-        'VERSION'   => '0.5_06',
- 		'PREREQ_PM' => {
- 			Test::Pod             => 0.70,
- 			Test::More            => 0,
- 			Test::Builder::Tester => 0,
- 			File::Find::Rule      => 0,
- 			Business::ISBN        => 0,
- 			},
-        'PM'        => 
-        	{
-            'lib/ISBN.pm'     => '$(INST_LIBDIR)/ISBN.pm',
-          },
- 
- 		depend => { Makefile => 't/test_manifest' },
-        test   => { TESTS => $tests },
-        );
+	(
+	'NAME'           => 'Test::ISBN',
+	'ABSTRACT'       => 'Check International Standard Book Numbers',
+	'VERSION_FROM'   => 'lib/ISBN.pm',
+	'PREREQ_PM'      => {
+		'Test::More'            => '0',
+		'Test::Builder::Tester' => '0',
+		'Business::ISBN'        => '0',
+		},
+	'PM'             => {
+		'lib/ISBN.pm'     => '$(INST_LIBDIR)/ISBN.pm',
+		},
+
+	clean            => { FILES => 'Test-ISBN-*' },
+	);
 
