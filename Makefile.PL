@@ -11,12 +11,13 @@ WriteMakefile
         (
         'NAME'      => 'Test::ISBN',
         'ABSTRACT'  => 'Check International Standard Book Numbers',
-        'VERSION'   => '0.5_04',
+        'VERSION'   => '0.5_06',
  		'PREREQ_PM' => {
  			Test::Pod             => 0.70,
  			Test::More            => 0,
  			Test::Builder::Tester => 0,
  			File::Find::Rule      => 0,
+ 			Business::ISBN        => 1.70,
  			},
         'PM'        => 
         	{
