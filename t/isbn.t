@@ -45,15 +45,19 @@ test_test("isbn_country_ok, isbn_publisher_ok");
 
 test_out( 'not ok 1' );
 isbn_country_ok( "1565927168", "0" );
-test_diag( "    Failed test ($0 at line " . line_num(-1) . ")",
+test_diag(
 	"ISBN [1565927168] country code is wrong",
-	"\tExpected [0]", "\tGot [1]" );
+	"\tExpected [0]", "\tGot [1]",
+	"    Failed test ($0 at line " . line_num(-1) . ")",
+	 );
 test_test("isbn_country_ok");
 
 
 test_out( 'not ok 1' );
 isbn_publisher_ok( "1565927168", "5659" );
-test_diag( "    Failed test ($0 at line " . line_num(-1) . ")",
+test_diag(
 	"ISBN [1565927168] publisher code is wrong",
-	"\tExpected [5659]", "\tGot [56592]" );
+	"\tExpected [5659]", "\tGot [56592]",
+	"    Failed test ($0 at line " . line_num(-1) . ")",
+	);
 test_test("isbn_publisher_ok");

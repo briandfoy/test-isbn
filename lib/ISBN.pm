@@ -66,8 +66,8 @@ sub isbn_country_ok
 
 	unless( $object->is_valid )
 		{
-		$Test->ok(0);
 		$Test->diag("ISBN [$isbn] is not valid"),
+		$Test->ok(0);
 		}
 	elsif( $object->country_code eq $country )
 		{
@@ -75,10 +75,10 @@ sub isbn_country_ok
 		}
 	else
 		{
-		$Test->ok(0);
 		$Test->diag("ISBN [$isbn] country code is wrong\n",
 			"\tExpected [$country]\n",
 			"\tGot [" . $object->country_code . "]\n" );
+		$Test->ok(0);
 		}
 
 	}
@@ -98,8 +98,8 @@ sub isbn_publisher_ok
 
 	unless( $object->is_valid )
 		{
-		$Test->ok(0);
 		$Test->diag("ISBN [$isbn] is not valid"),
+		$Test->ok(0);
 		}
 	elsif( $object->publisher_code eq $publisher )
 		{
@@ -107,10 +107,10 @@ sub isbn_publisher_ok
 		}
 	else
 		{
-		$Test->ok(0);
 		$Test->diag("ISBN [$isbn] publisher code is wrong\n",
 			"\tExpected [$publisher]\n",
 			"\tGot [" . $object->publisher_code . "]\n" );
+		$Test->ok(0);
 		}
 	}
 
@@ -132,7 +132,7 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT
 
-Copyright 2002-2004 brian d foy, All rights reserved.
+Copyright 2002-2005 brian d foy, All rights reserved.
 
 You can use this module under the same terms as
 Perl itself.
