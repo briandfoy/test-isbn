@@ -3,7 +3,7 @@ package Test::ISBN;
 use strict;
 
 use base qw(Exporter);
-use vars qw(@EXPORT);
+use vars qw(@EXPORT $VERSION);
 
 use Business::ISBN;
 use Exporter;
@@ -11,7 +11,8 @@ use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-@EXPORT = qw(isbn_ok isbn_country_ok isbn_publisher_ok);
+$VERSION = '0.5_04';
+@EXPORT  = qw(isbn_ok isbn_country_ok isbn_publisher_ok);
 
 =head1 NAME
 
