@@ -4,3 +4,4 @@ lib/ISBN.pm
 t/load.t
 t/pod.t
 t/test_manifest
+t/isbn.t

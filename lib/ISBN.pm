@@ -2,11 +2,16 @@
 package Test::ISBN;
 use strict;
 
+use base qw(Exporter);
+use vars qw(@EXPORT);
 
 use Business::ISBN;
+use Exporter;
 use Test::Builder;
 
 my $Test = Test::Builder->new();
+
+@EXPORT = qw(isbn_ok);
 
 =head1 NAME
 
@@ -28,19 +33,21 @@ Test::ISBN - Check International Standard Book Numbers
 =item isbn_ok( STRING )
 
 Ok is the STRING is a valid ISBN, in any format that
-Business::ISBN accepts.
+Business::ISBN accepts.  This function only checks
+the checksum.  The publisher and country codes might
+be invalid even though the checksum is valid.
 
 =cut
 
 sub isbn_ok
-	{
+	{	
 	my $isbn = shift;
 	my $ok   = Business::ISBN::is_valid_checksum( $isbn ) 
 		eq Business::ISBN::GOOD_ISBN;
 	
 	$Test->ok( $ok );
 
-	$Test->diag( "Foo" ) unless $ok;
+	$Test->diag( "The string [$isbn] is not a valid ISBN" ) unless $ok;
 	}
 	
 =item isbn_country_ok( STRING, COUNTRY )
@@ -120,3 +127,5 @@ You can use this module under the same terms as
 Perl itself.
 
 =cut
+
+1;
