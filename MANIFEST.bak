@@ -1,7 +1,11 @@
-MANIFEST
-Makefile.PL
+Changes
 lib/ISBN.pm
+Makefile.PL
+MANIFEST
+README
+t/isbn.t
 t/load.t
 t/pod.t
+t/prereq.t
 t/test_manifest
-t/isbn.t
+META.yml
