@@ -1,5 +1,8 @@
 # $Id$
 
+1.07 - Wed May 17 21:51:45 2006
+	* updates for the distribution and quality. No need to upgrade.
+
 1.06 - Tue Mar  8 18:09:43 2005
 	* Added POD Coverage tests: no need to upgrade
 
