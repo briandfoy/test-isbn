@@ -33,10 +33,9 @@ Test::ISBN - Check International Standard Book Numbers
 
 =item isbn_ok( STRING )
 
-Ok is the STRING is a valid ISBN, in any format that
-Business::ISBN accepts.  This function only checks
-the checksum.  The publisher and country codes might
-be invalid even though the checksum is valid.
+Ok is the STRING is a valid ISBN, in any format that Business::ISBN
+accepts.  This function only checks the checksum.  The publisher and
+country codes might be invalid even though the checksum is valid.
 
 =cut
 
