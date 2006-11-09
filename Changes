@@ -1,5 +1,11 @@
 # $Id$
 
+1.08 - Thu Nov  9 06:53:22 2006
+	* Minor doc cleanup for formatting
+	* Adjusted Test::Manifest use in Makefile.PL. It's still
+	optional
+	* No need to upgrade if you already have this.
+
 1.07 - Wed May 17 21:51:45 2006
 	* updates for the distribution and quality. No need to upgrade.
 
