@@ -7,6 +7,7 @@ WriteMakefile
 	(
 	'NAME'           => 'Test::ISBN',
 	'ABSTRACT'       => 'Check International Standard Book Numbers',
+	'LICENSE'       => 'perl',
 	'VERSION_FROM'   => 'lib/ISBN.pm',
 	'PREREQ_PM'      => {
 		'Test::More'            => '0',
