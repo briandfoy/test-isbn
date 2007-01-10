@@ -1,5 +1,6 @@
 Changes
 lib/ISBN.pm
+LICENSE
 Makefile.PL
 MANIFEST
 META.yml
