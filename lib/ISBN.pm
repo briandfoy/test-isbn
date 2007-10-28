@@ -11,7 +11,7 @@ use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-$VERSION = sprintf "%d.%02d", q$Revision$ =~ m/ (\d+) \. (\d+) /xg;
+$VERSION = 1.11;
 @EXPORT  = qw(isbn_ok isbn_country_ok isbn_publisher_ok);
 
 =head1 NAME

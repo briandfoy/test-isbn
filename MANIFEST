@@ -4,7 +4,6 @@ lib/ISBN.pm
 LICENSE
 Makefile.PL
 MANIFEST
-META.yml
 README
 t/isbn.t
 t/load.t
