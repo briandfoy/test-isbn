@@ -5,14 +5,14 @@ use strict;
 use base qw(Exporter);
 use vars qw(@EXPORT $VERSION);
 
-use Business::ISBN;
+use Business::ISBN 2.0;
 use Exporter;
 use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-$VERSION = 1.11;
-@EXPORT  = qw(isbn_ok isbn_country_ok isbn_publisher_ok);
+$VERSION = 2.01;
+@EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
 
 =head1 NAME
 
@@ -26,6 +26,8 @@ Test::ISBN - Check International Standard Book Numbers
 	isbn_ok( $isbn );
 
 =head1 DESCRIPTION
+
+This is the 2.x version of Test::ISBN and works with Business::ISBN 2.x.
 
 =head2 Functions
 
@@ -42,22 +44,25 @@ country codes might be invalid even though the checksum is valid.
 sub isbn_ok
 	{
 	my $isbn = shift;
-	my $ok   = Business::ISBN::is_valid_checksum( $isbn )
-		eq Business::ISBN::GOOD_ISBN;
+	
+	my $object = Business::ISBN->new( $isbn );
+	
+	my $ok   = ref $object && 
+		( $object->is_valid_checksum( $isbn ) eq Business::ISBN::GOOD_ISBN );
 
 	$Test->ok( $ok );
 
 	$Test->diag( "The string [$isbn] is not a valid ISBN" ) unless $ok;
 	}
 
-=item isbn_country_ok( STRING, COUNTRY )
+=item isbn_group_ok( STRING, COUNTRY )
 
 Ok is the STRING is a valid ISBN and its country
 code is the same as COUNTRY.
 
 =cut
 
-sub isbn_country_ok
+sub isbn_group_ok
 	{
 	my $isbn    = shift;
 	my $country = shift;
@@ -68,20 +73,35 @@ sub isbn_country_ok
 		$Test->diag("ISBN [$isbn] is not valid"),
 		$Test->ok(0);
 		}
-	elsif( $object->country_code eq $country )
+	elsif( $object->group_code eq $country )
 		{
 		$Test->ok(1);
 		}
 	else
 		{
-		$Test->diag("ISBN [$isbn] country code is wrong\n",
+		$Test->diag("ISBN [$isbn] group code is wrong\n",
 			"\tExpected [$country]\n",
-			"\tGot [" . $object->country_code . "]\n" );
+			"\tGot [" . $object->group_code . "]\n" );
 		$Test->ok(0);
 		}
 
 	}
 
+=item isbn_country_ok( STRING, COUNTRY )
+
+Deprecated. Use isbn_group_ok. This is still exported, though.
+
+For now it warns and redirects to isbn_group_ok.
+
+=cut
+
+sub isbn_country_ok
+	{
+	$Test->diag( "isbn_country_ok is deprecated. Use isbn_group_ok" );
+	
+	&isbn_group_ok;
+	}
+	
 =item isbn_publisher_ok( STRING, PUBLISHER )
 
 Ok is the STRING is a valid ISBN and its publisher

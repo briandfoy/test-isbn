@@ -14,7 +14,7 @@ WriteMakefile
 	'PREREQ_PM'      => {
 		'Test::More'            => '0',
 		'Test::Builder::Tester' => '0',
-		'Business::ISBN'        => '0',
+		'Business::ISBN'        => '2.0',
 		},
 	'PM'             => {
 		'lib/ISBN.pm'     => '$(INST_LIBDIR)/ISBN.pm',
