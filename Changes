@@ -1,5 +1,11 @@
 # $Id$
 
+2.01 - Sat Oct 27 21:16:50 2007
+	* distro cleanups after moving from CVS to SVN
+	* This version works with Business::ISBN 2.0.
+	* isbn_group_ok is the new name for isbn_country_ok (although
+	isbn_country_ok)
+
 1.09 - Tue Jan  9 22:51:14 2007
 	* updated copyright and license info
 	* no code changes, so no need to upgrade
