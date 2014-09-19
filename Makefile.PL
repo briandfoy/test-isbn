@@ -4,12 +4,11 @@ require 5.008;
 
 eval "use Test::Manifest 1.21";
 
-WriteMakefile
-	(
+WriteMakefile (
 	'NAME'          => 'Test::ISBN',
 	'ABSTRACT'      => 'Check International Standard Book Numbers',
-	'LICENSE'		=> 'perl',
-	'AUTHOR'		=> 'brian d foy <bdfoy@cpan.org>',
+	'LICENSE'       => 'perl',
+	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
 
 	'VERSION_FROM'   => 'lib/Test/ISBN.pm',
 	'PREREQ_PM'      => {
