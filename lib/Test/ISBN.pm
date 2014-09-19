@@ -32,11 +32,13 @@ This is the 2.x version of Test::ISBN and works with Business::ISBN 2.x.
 
 =over 4
 
-=item isbn_ok( STRING )
+=item isbn_ok( STRING | ISBN )
 
 Ok is the STRING is a valid ISBN, in any format that Business::ISBN
 accepts.  This function only checks the checksum.  The publisher and
 country codes might be invalid even though the checksum is valid.
+
+If the first argument is an ISBN object, it checks that object.
 
 =cut
 
@@ -54,10 +56,11 @@ sub isbn_ok
 	$Test->diag( "The string [$isbn] is not a valid ISBN" ) unless $ok;
 	}
 
-=item isbn_group_ok( STRING, COUNTRY )
+=item isbn_group_ok( STRING | ISBN, COUNTRY )
 
-Ok is the STRING is a valid ISBN and its country
-code is the same as COUNTRY.
+Ok is the STRING is a valid ISBN and its country code is the same as
+COUNTRY. If the first argument is an ISBN object, it checks that
+object.
 
 =cut
 
@@ -87,11 +90,14 @@ sub isbn_group_ok
 
 	}
 
-=item isbn_country_ok( STRING, COUNTRY )
+=item isbn_country_ok( STRING | ISBN, COUNTRY )
 
 Deprecated. Use isbn_group_ok. This is still exported, though.
 
 For now it warns and redirects to isbn_group_ok.
+
+If the first argument is an ISBN object, it checks that
+object.
 
 =cut
 
@@ -102,10 +108,13 @@ sub isbn_country_ok
 	&isbn_group_ok;
 	}
 	
-=item isbn_publisher_ok( STRING, PUBLISHER )
+=item isbn_publisher_ok( STRING | ISBN, PUBLISHER )
 
 Ok is the STRING is a valid ISBN and its publisher
 code is the same as PUBLISHER.
+
+If the first argument is an ISBN object, it checks that
+object.
 
 =cut
 
