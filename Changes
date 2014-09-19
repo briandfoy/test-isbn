@@ -1,5 +1,10 @@
 # Changes for Test-ISBN
 
+2.02 - Fri Sep 19 12:02:06 2014
+	* Let test functions take an ISBN object
+	* Update docs and refs to repos (it's been GitHub for years)
+	* Modernize the distribution
+
 2.01 - Sat Oct 27 21:16:50 2007
 	* distro cleanups after moving from CVS to SVN
 	* This version works with Business::ISBN 2.0.
