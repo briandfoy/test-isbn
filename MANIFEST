@@ -4,6 +4,7 @@ lib/Test/ISBN.pm
 LICENSE
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 README
 t/isbn.t
 t/load.t
