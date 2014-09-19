@@ -12,14 +12,12 @@ WriteMakefile
 	'LICENSE'		=> 'perl',
 	'AUTHOR'		=> 'brian d foy <bdfoy@cpan.org>',
 
-	'VERSION_FROM'   => 'lib/ISBN.pm',
+	'VERSION_FROM'   => 'lib/Test/ISBN.pm',
 	'PREREQ_PM'      => {
 		'Test::More'            => '0',
 		'Test::Builder::Tester' => '0',
 		'Business::ISBN'        => '2.0',
 		},
-	'PM'             => {
-		'lib/ISBN.pm'     => '$(INST_LIBDIR)/ISBN.pm',
 		},
 
 	clean            => { FILES => 'Test-ISBN-*' },

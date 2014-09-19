@@ -1,6 +1,6 @@
 Changes
 examples/README
-lib/ISBN.pm
+lib/Test/ISBN.pm
 LICENSE
 Makefile.PL
 MANIFEST

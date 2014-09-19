@@ -1,4 +1,3 @@
-# $Id$
 package Test::ISBN;
 use strict;
 
@@ -11,7 +10,7 @@ use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-$VERSION = 2.01;
+$VERSION = '2.02';
 @EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
 
 =head1 NAME
@@ -45,7 +44,7 @@ sub isbn_ok
 	{
 	my $isbn = shift;
 	
-	my $object = Business::ISBN->new( $isbn );
+	my $object = _get_object( $isbn );
 	
 	my $ok   = ref $object && 
 		( $object->is_valid_checksum( $isbn ) eq Business::ISBN::GOOD_ISBN );
@@ -66,7 +65,8 @@ sub isbn_group_ok
 	{
 	my $isbn    = shift;
 	my $country = shift;
-	my $object  = Business::ISBN->new($isbn);
+
+	my $object = _get_object( $isbn );
 
 	unless( $object->is_valid )
 		{
@@ -113,7 +113,8 @@ sub isbn_publisher_ok
 	{
 	my $isbn      = shift;
 	my $publisher = shift;
-	my $object    = Business::ISBN->new($isbn);
+
+	my $object = _get_object( $isbn );
 
 	unless( $object->is_valid )
 		{
@@ -133,6 +134,15 @@ sub isbn_publisher_ok
 		}
 	}
 
+sub _get_object {
+	my( $arg ) = @_;
+
+	my $object = do {
+		if( eval { $arg->isa( 'Business::ISBN' ) } ) { $arg }
+		else { Business::ISBN->new( $arg ) }
+		};
+	}
+
 =back
 
 =head1 SOURCE AVAILABILITY
@@ -140,7 +150,7 @@ sub isbn_publisher_ok
 This source is part of a SourceForge project which always has the
 latest sources in CVS, as well as all of the previous releases.
 
-	http://sourceforge.net/projects/brian-d-foy/
+	https://github.com/briandfoy/Test-ISBN
 
 If, for some reason, I disappear from the world, one of the other
 members of the project can shepherd this module appropriately.
@@ -151,7 +161,7 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2002-2007 brian d foy.  All rights reserved.
+Copyright (c) 2002-2014 brian d foy.  All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
