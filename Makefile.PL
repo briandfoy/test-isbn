@@ -12,12 +12,13 @@ WriteMakefile (
 
 	'VERSION_FROM'   => 'lib/Test/ISBN.pm',
 	'PREREQ_PM'      => {
-		'Test::More'            => '0',
-		'Test::Builder::Tester' => '0',
 		'Business::ISBN'        => '2.0',
 		},
-		},
 
+	'TEST_REQUIRES' => {
+		'Test::More'            => '0',
+		'Test::Builder::Tester' => '0',
+		},
 
 	'META_MERGE' => {
 		'meta-spec' => { version => 2 },
@@ -28,6 +29,8 @@ WriteMakefile (
 					web  => 'https://github.com/briandfoy/Test-ISBN',
 				},
 			},
+		},
+
 	clean            => { FILES => 'Test-ISBN-*' },
 	);
 
