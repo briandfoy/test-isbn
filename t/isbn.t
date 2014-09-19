@@ -1,5 +1,3 @@
-# $Id$
-
 BEGIN
 	{
 	@good_isbns = qw(
