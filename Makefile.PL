@@ -19,6 +19,16 @@ WriteMakefile
 		},
 		},
 
+
+	'META_MERGE' => {
+		'meta-spec' => { version => 2 },
+			resources => {
+				repository => {
+					type => 'git',
+					url  => 'https://github.com/briandfoy/Test-ISBN.git',
+					web  => 'https://github.com/briandfoy/Test-ISBN',
+				},
+			},
 	clean            => { FILES => 'Test-ISBN-*' },
 	);
 
