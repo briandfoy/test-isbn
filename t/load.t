@@ -1,10 +1,8 @@
-BEGIN {
-	@classes = qw(Test::ISBN);
+use Test::More 0.95;
+my @classes = qw(Test::ISBN);
+
+foreach my $class ( @classes ) {
+	use_ok( $class ) or BAIL_OUT();
 	}
 
-use Test::More tests => scalar @classes;
-
-foreach my $class ( @classes )
-	{
-	print "bail out! $class did not compile\n" unless use_ok( $class );
-	}
+done_testing();
