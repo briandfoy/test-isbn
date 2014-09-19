@@ -10,7 +10,7 @@ use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-$VERSION = '2.02';
+$VERSION = '2.03';
 @EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
 
 =head1 NAME
@@ -46,13 +46,15 @@ sub isbn_ok {
 	my $isbn = shift;
 	
 	my $object = _get_object( $isbn );
+
+	my $string = ref $isbn ? eval { $isbn->as_string } : $isbn;
 	
 	my $ok   = ref $object && 
 		( $object->is_valid_checksum( $isbn ) eq Business::ISBN::GOOD_ISBN );
 
 	$Test->ok( $ok );
 
-	$Test->diag( "The string [$isbn] is not a valid ISBN" ) unless $ok;
+	$Test->diag( "The string [$string] is not a valid ISBN" ) unless $ok;
 	}
 
 =item isbn_group_ok( STRING | ISBN, COUNTRY )
@@ -69,15 +71,17 @@ sub isbn_group_ok {
 
 	my $object = _get_object( $isbn );
 
+	my $string = ref $isbn ? eval { $isbn->as_string } : $isbn;
+
 	unless( $object->is_valid ) {
-		$Test->diag("ISBN [$isbn] is not valid"),
+		$Test->diag("ISBN [$string] is not valid"),
 		$Test->ok(0);
 		}
 	elsif( $object->group_code eq $country ) {
 		$Test->ok(1);
 		}
 	else {
-		$Test->diag("ISBN [$isbn] group code is wrong\n",
+		$Test->diag("ISBN [$string] group code is wrong\n",
 			"\tExpected [$country]\n",
 			"\tGot [" . $object->group_code . "]\n" );
 		$Test->ok(0);
@@ -118,15 +122,17 @@ sub isbn_publisher_ok {
 
 	my $object = _get_object( $isbn );
 
+	my $string = ref $isbn ? eval { $isbn->as_string } : $isbn;
+
 	unless( $object->is_valid ) {
-		$Test->diag("ISBN [$isbn] is not valid"),
+		$Test->diag("ISBN [$string] is not valid"),
 		$Test->ok(0);
 		}
 	elsif( $object->publisher_code eq $publisher ) {
 		$Test->ok(1);
 		}
 	else {
-		$Test->diag("ISBN [$isbn] publisher code is wrong\n",
+		$Test->diag("ISBN [$string] publisher code is wrong\n",
 			"\tExpected [$publisher]\n",
 			"\tGot [" . $object->publisher_code . "]\n" );
 		$Test->ok(0);
