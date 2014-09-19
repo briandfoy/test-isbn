@@ -42,8 +42,7 @@ If the first argument is an ISBN object, it checks that object.
 
 =cut
 
-sub isbn_ok
-	{
+sub isbn_ok {
 	my $isbn = shift;
 	
 	my $object = _get_object( $isbn );
@@ -64,24 +63,20 @@ object.
 
 =cut
 
-sub isbn_group_ok
-	{
+sub isbn_group_ok {
 	my $isbn    = shift;
 	my $country = shift;
 
 	my $object = _get_object( $isbn );
 
-	unless( $object->is_valid )
-		{
+	unless( $object->is_valid ) {
 		$Test->diag("ISBN [$isbn] is not valid"),
 		$Test->ok(0);
 		}
-	elsif( $object->group_code eq $country )
-		{
+	elsif( $object->group_code eq $country ) {
 		$Test->ok(1);
 		}
-	else
-		{
+	else {
 		$Test->diag("ISBN [$isbn] group code is wrong\n",
 			"\tExpected [$country]\n",
 			"\tGot [" . $object->group_code . "]\n" );
@@ -101,8 +96,7 @@ object.
 
 =cut
 
-sub isbn_country_ok
-	{
+sub isbn_country_ok {
 	$Test->diag( "isbn_country_ok is deprecated. Use isbn_group_ok" );
 	
 	&isbn_group_ok;
@@ -118,24 +112,20 @@ object.
 
 =cut
 
-sub isbn_publisher_ok
-	{
+sub isbn_publisher_ok {
 	my $isbn      = shift;
 	my $publisher = shift;
 
 	my $object = _get_object( $isbn );
 
-	unless( $object->is_valid )
-		{
+	unless( $object->is_valid ) {
 		$Test->diag("ISBN [$isbn] is not valid"),
 		$Test->ok(0);
 		}
-	elsif( $object->publisher_code eq $publisher )
-		{
+	elsif( $object->publisher_code eq $publisher ) {
 		$Test->ok(1);
 		}
-	else
-		{
+	else {
 		$Test->diag("ISBN [$isbn] publisher code is wrong\n",
 			"\tExpected [$publisher]\n",
 			"\tGot [" . $object->publisher_code . "]\n" );
