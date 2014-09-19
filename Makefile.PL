@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker 6.65;
 
 require 5.008;
 
-eval "use Test::Manifest 1.14";
+eval "use Test::Manifest 1.21";
 
 WriteMakefile
 	(
