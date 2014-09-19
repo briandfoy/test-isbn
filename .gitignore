@@ -1,0 +1,6 @@
+MYMETA*
+blib
+Test-*
+Makefile
+*.old
+pm_to_blib
