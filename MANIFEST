@@ -10,5 +10,4 @@ t/isbn.t
 t/load.t
 t/pod.t
 t/pod_coverage.t
-t/prereq.t
 t/test_manifest
