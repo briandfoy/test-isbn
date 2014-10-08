@@ -50,11 +50,10 @@ sub isbn_ok {
 	my $string = ref $isbn ? eval { $isbn->as_string } : $isbn;
 	
 	my $ok   = ref $object && 
-		( $object->is_valid_checksum( $isbn ) eq Business::ISBN::GOOD_ISBN );
+		( $object->is_valid_checksum( $string ) eq Business::ISBN::GOOD_ISBN );
+	$Test->diag( "The argument [$string] is not a valid ISBN" ) unless $ok;
 
 	$Test->ok( $ok );
-
-	$Test->diag( "The string [$string] is not a valid ISBN" ) unless $ok;
 	}
 
 =item isbn_group_ok( STRING | ISBN, COUNTRY )
