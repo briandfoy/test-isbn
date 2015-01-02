@@ -1,5 +1,8 @@
 # Changes for Test-ISBN
 
+2.04 - Wed Oct  8 02:26:50 2014
+	* Get rid of the prereq tests
+
 2.02 - Fri Sep 19 12:02:06 2014
 	* Let test functions take an ISBN object
 	* Update docs and refs to repos (it's been GitHub for years)

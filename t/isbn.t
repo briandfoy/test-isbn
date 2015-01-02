@@ -31,8 +31,10 @@ foreach my $isbn ( @bad_isbns )
 	{
 	test_out( 'not ok 1' );
 	isbn_ok( $isbn );
-	test_diag( "    Failed test ($0 at line " . line_num(-1) . ")",
-		"The string [$isbn] is not a valid ISBN" );
+	test_diag(
+		"The argument [$isbn] is not a valid ISBN",
+		"    Failed test ($0 at line " . line_num(-1) . ")",
+		);
 	test_test("isbn_ok catching errors");
 	}
 
