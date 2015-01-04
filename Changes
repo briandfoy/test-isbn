@@ -1,4 +1,4 @@
-# Changes for Test-ISBN
+Revision history for Perl module Test::ISBN
 
 2.04 - Wed Oct  8 02:26:50 2014
 	* Get rid of the prereq tests
