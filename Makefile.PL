@@ -2,15 +2,15 @@ require 5.008;
 use strict;
 use warnings;
 
-my $github    = 'https://github.com/briandfoy/';
+my $github    = 'https://github.com/briandfoy/Test-ISBN';
 my $main_file = 'lib/Test/ISBN.pm';
 
-WriteMakefile (
-	'NAME'          => 'Test::ISBN',
-	'ABSTRACT_FROM'  => $main_file;.
-	'LICENSE'       => 'perl',
-	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
-	'VERSION_FROM'   => ,
+my %WriteMakefile = (
+	'NAME'           => 'Test::ISBN',
+	'VERSION_FROM'   => $main_file,
+	'ABSTRACT_FROM'  => $main_file,
+	'LICENSE'        => 'perl',
+	'AUTHOR'         => 'brian d foy <bdfoy@cpan.org>',
 
 	'CONFIGURE_REQUIRES' => {
 		'ExtUtils::MakeMaker' => '6.64',
@@ -21,9 +21,11 @@ WriteMakefile (
 
 	'TEST_REQUIRES' => {
 		'Test::More' => '0.94',
+		'Test::Builder::Tester' => '0',
 		},
 
 	'PREREQ_PM'     => {
+		'Business::ISBN'        => '2.0',
 		},
 
 	'META_MERGE' => {
@@ -38,25 +40,6 @@ WriteMakefile (
 				web    => "$github/issues",
 				},
 			homepage => $github,
-			},
-		},
-	'PREREQ_PM'      => {
-		'Business::ISBN'        => '2.0',
-		},
-
-	'TEST_REQUIRES' => {
-		'Test::More'            => '0',
-		'Test::Builder::Tester' => '0',
-		},
-
-	'META_MERGE' => {
-		'meta-spec' => { version => 2 },
-			resources => {
-				repository => {
-					type => 'git',
-					url  => 'https://github.com/briandfoy/Test-ISBN.git',
-					web  => 'https://github.com/briandfoy/Test-ISBN',
-				},
 			},
 		},
 
