@@ -49,7 +49,7 @@ my %WriteMakefile = (
 			},
 		},
 
-	clean            => { FILES => 'Test-ISBN-*' },
+	clean => { FILES => "$dist-*" },
 	);
 
 
