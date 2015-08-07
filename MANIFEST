@@ -1,6 +1,7 @@
 .travis.yml
 Changes
 examples/README
+INSTALL.SKIP
 lib/Test/ISBN.pm
 LICENSE
 Makefile.PL
