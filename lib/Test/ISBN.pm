@@ -13,6 +13,8 @@ my $Test = Test::Builder->new();
 $VERSION = '2.04';
 @EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
 
+=encoding utf8
+
 =head1 NAME
 
 Test::ISBN - Check International Standard Book Numbers
@@ -44,12 +46,12 @@ If the first argument is an ISBN object, it checks that object.
 
 sub isbn_ok {
 	my $isbn = shift;
-	
+
 	my $object = _get_object( $isbn );
 
 	my $string = ref $isbn ? eval { $isbn->as_string } : $isbn;
-	
-	my $ok   = ref $object && 
+
+	my $ok   = ref $object &&
 		( $object->is_valid_checksum( $string ) eq Business::ISBN::GOOD_ISBN );
 	$Test->diag( "The argument [$string] is not a valid ISBN" ) unless $ok;
 
@@ -101,10 +103,10 @@ object.
 
 sub isbn_country_ok {
 	$Test->diag( "isbn_country_ok is deprecated. Use isbn_group_ok" );
-	
+
 	&isbn_group_ok;
 	}
-	
+
 =item isbn_publisher_ok( STRING | ISBN, PUBLISHER )
 
 Ok is the STRING is a valid ISBN and its publisher
