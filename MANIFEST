@@ -12,5 +12,4 @@ t/load.t
 t/pod.t
 t/pod_coverage.t
 t/test_manifest
-Test-ISBN-2.02.tar.gz
 xt/changes.t
