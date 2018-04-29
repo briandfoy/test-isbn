@@ -1,16 +1,14 @@
 package Test::ISBN;
 use strict;
 
-use vars qw(@EXPORT $VERSION);
-
 use Business::ISBN 2.0;
 use Exporter qw(import);
 use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-@EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
 our $VERSION = '2.041';
+our @EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
 
 =encoding utf8
 
