@@ -2,6 +2,16 @@
 
 =encoding utf8
 
+=for HTML <a href="https://travis-ci.org/briandfoy/test-isbn"><img src="https://travis-ci.org/briandfoy/test-isbn.svg?branch=master" /></a>
+
+=for HTML <a href='https://ci.appveyor.com/project/briandfoy/test-isbn'><img src='https://ci.appveyor.com/api/projects/status/uwickb639g0yg2y0' /></a>
+
+=for HTML <a href='https://coveralls.io/github/briandfoy/test-isbn?branch=master'><img src='https://coveralls.io/repos/github/briandfoy/test-isbn/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+=for HTML <a href="https://github.com/briandfoy/test-isbn/blob/master/LICENSE"><img src="https://img.shields.io/cpan/l/Test-ISBN.svg" /></a>
+
+=for HTML <a href="http://www.metacpan.org/module/Test::ISBN"><img src="https://img.shields.io/cpan/v/Test-ISBN.svg" /></A>
+
 =head1 The Test::ISBN module
 
 This is the I<README> for the L<Test::ISBN> Perl module. You're probably 
