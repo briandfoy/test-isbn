@@ -1,5 +1,9 @@
 Revision history for Perl module Test::ISBN
 
+2.041 2018-04-29T14:28:56Z
+	* Clarify that it's the Artistic License 2.0.
+	* Renamed the GitHub repo to make it all lowercase. No big whoop.
+
 2.04 - 2014-10-08
 	* Get rid of the prereq tests
 
