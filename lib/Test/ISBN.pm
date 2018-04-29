@@ -1,11 +1,10 @@
 package Test::ISBN;
 use strict;
 
-use base qw(Exporter);
 use vars qw(@EXPORT $VERSION);
 
 use Business::ISBN 2.0;
-use Exporter;
+use Exporter qw(import);
 use Test::Builder;
 
 my $Test = Test::Builder->new();
