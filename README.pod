@@ -71,16 +71,16 @@ the source repository:
 
 =over 4
 
-=item *	L<https://github.com/briandfoy/Test-ISBN>
+=item *	L<https://github.com/briandfoy/test-isbn>
 
 =back
 
-If you find a problem, file a ticket in the L<issue 
-tracker|https://github.com/briandfoy/Test-ISBN/issues>:
+If you find a problem, file a ticket in the L<issue
+tracker|https://github.com/briandfoy/test-isbn/issues>:
 
 =over 4
 
-=item *	L<https://github.com/briandfoy/Test-ISBN/issues>
+=item *	L<https://github.com/briandfoy/test-isbn/issues>
 
 =back
 

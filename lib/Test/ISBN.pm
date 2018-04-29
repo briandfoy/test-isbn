@@ -155,7 +155,7 @@ sub _get_object {
 
 This source is in GitHub:
 
-	https://github.com/briandfoy/Test-ISBN
+	https://github.com/briandfoy/test-isbn
 
 =head1 AUTHOR
 
