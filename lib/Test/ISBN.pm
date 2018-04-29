@@ -9,8 +9,8 @@ use Test::Builder;
 
 my $Test = Test::Builder->new();
 
-$VERSION = '2.04';
 @EXPORT  = qw(isbn_ok isbn_group_ok isbn_country_ok isbn_publisher_ok);
+our $VERSION = '2.041';
 
 =encoding utf8
 
