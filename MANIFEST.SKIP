@@ -64,3 +64,6 @@
 
 \.orig
 \.mine
+\bMANIFEST\s\d
+\bChanges\s\d
+
