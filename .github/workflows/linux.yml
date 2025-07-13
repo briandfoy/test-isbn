@@ -87,7 +87,7 @@ jobs:
                     - 'perl-5.28.3'
                     - 'perl-5.40.1'
         container:
-            image: perlreview:${{ matrix.perl-version }}
+            image: perlreview/${{ matrix.perl-version }}-latest
         steps:
             - uses: actions/checkout@v3
             - name: git corrections
