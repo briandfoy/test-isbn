@@ -84,25 +84,10 @@ jobs:
                 os:
                     - ubuntu-latest
                 perl-version:
-                    - '589'
-#                    - '5.10-buster'
-                    - '5121'
-                    - '5144'
-                    - '5163'
-                    - '5184'
-#- '5.20-buster'
-                    - '5224'
-                    - '5244'
-                    - '5263'
-                    - '5283'
-                    - '5303'
-                    - '5321'
-                    - '5343'
-                    - '5363'
-                    - '5383'
-                    - '5401'
+                    - '5.28.3'
+                    - '5.40.1'
         container:
-            image: briandfoy:${{ matrix.perl-version }}
+            image: perlreview:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v3
             - name: git corrections
