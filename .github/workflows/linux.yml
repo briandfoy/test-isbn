@@ -84,8 +84,8 @@ jobs:
                 os:
                     - ubuntu-latest
                 perl-version:
-                    - '5.28.3'
-                    - '5.40.1'
+                    - 'perl-5.28.3'
+                    - 'perl-5.40.1'
         container:
             image: perlreview:${{ matrix.perl-version }}
         steps:
